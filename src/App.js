@@ -1,14 +1,18 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'; // Import Routes and Route
-import HomePage from './components/HomePage';
+import Main from './components/Main'; // Import Main component
 import BookingPage from './components/BookingPage';
+import Nav from './components/Nav'; // Import Nav component
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/booking" element={<BookingPage />} />
-    </Routes>
+    <>
+      <Nav /> {/* Navigation bar */}
+      <Routes>
+        <Route path="/" element={<Main />} /> {/* Ensure Main component is rendered */}
+        <Route path="/booking" element={<BookingPage />} />
+      </Routes>
+    </>
   );
 }
 
