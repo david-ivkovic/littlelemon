@@ -1,12 +1,16 @@
-// src/components/CallToAction.js
-function CallToAction() {
-    return (
-      <section className="call-to-action">
-        <h1>Welcome to Little Lemon</h1>
-        <p>Explore our delicious dishes and make a reservation!</p>
-        <button>Book a Table</button>
-      </section>
-    );
-  }
+import { Link } from 'react-router-dom';
 
-  export default CallToAction;
+function CallToAction() {
+  return (
+    <section className="call-to-action">
+      <h1>Welcome to Little Lemon</h1>
+      <p>Explore our delicious dishes and make a reservation!</p>
+      {/* Linking to the booking page */}
+      <Link to="/booking">
+        <button>Book a Table</button>
+      </Link>
+    </section>
+  );
+}
+
+export default CallToAction;
