@@ -45,7 +45,6 @@ function BookingForm() {
 
   return (
     <form style={{ display: 'grid', gap: '20px' }} aria-labelledby="booking-form">
-      <h2 id="booking-form">Reserve a Table</h2>
 
       {/* Date field */}
       <label htmlFor="res-date" id="res-date-label">Choose date</label>
