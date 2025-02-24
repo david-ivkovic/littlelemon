@@ -9,7 +9,7 @@ function App() {
     <>
       <Nav /> {/* Navigation bar */}
       <Routes>
-        <Route path="/" element={<Main />} /> {/* Ensure Main component is rendered */}
+        <Route path="/" element={<Main />} />
         <Route path="/booking" element={<BookingPage />} />
       </Routes>
     </>

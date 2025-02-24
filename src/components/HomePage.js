@@ -1,4 +1,3 @@
-// src/components/HomePage.js
 import React from 'react';
 import CallToAction from './CallToAction';
 import Specials from './Specials';
@@ -8,9 +7,18 @@ import Chicago from './Chicago';
 function HomePage() {
   return (
     <div>
+      <h1>Welcome to Little Lemon</h1>
+      
+      {/* Hero section with a call to action */}
       <CallToAction />
+      
+      {/* Specials section showcasing special dishes */}
       <Specials />
+      
+      {/* Customers' testimonials */}
       <CustomersSay />
+      
+      {/* About Chicago restaurant */}
       <Chicago />
     </div>
   );

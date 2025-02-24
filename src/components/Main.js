@@ -1,38 +1,26 @@
-import React, { useReducer } from 'react';
-import BookingForm from './BookingForm';
+import React from 'react';
+import CallToAction from './CallToAction';
+import Specials from './Specials';
+import CustomersSay from './CustomersSay';
+import Chicago from './Chicago';
 
-// Reducer function to manage availableTimes state
-const availableTimesReducer = (state, action) => {
-  switch (action.type) {
-    case 'UPDATE_TIMES':
-      return action.payload; // Return the updated available times
-    default:
-      return state;
-  }
-};
-
-function Main() {
-  // Using useReducer to manage available times
-  const [availableTimes, dispatch] = useReducer(availableTimesReducer, [
-    '17:00', '18:00', '19:00', '20:00', '21:00'
-  ]);
-
-  // The function that updates availableTimes
-  const updateTimes = (selectedDate) => {
-    // For now, we just return the same times regardless of the date
-    dispatch({
-      type: 'UPDATE_TIMES',
-      payload: ['17:00', '18:00', '19:00', '20:00', '21:00'],
-    });
-  };
-
+function HomePage() {
   return (
     <div>
-      <h1>Little Lemon Reservations</h1>
-      {/* Pass the availableTimes and updateTimes to BookingForm */}
-      <BookingForm availableTimes={availableTimes} updateTimes={updateTimes} />
+     
+      {/* Hero section with a call to action */}
+      <CallToAction />
+      
+      {/* Specials section showcasing special dishes */}
+      <Specials />
+      
+      {/* Customers' testimonials */}
+      <CustomersSay />
+      
+      {/* About Chicago restaurant */}
+      <Chicago />
     </div>
   );
 }
 
-export default Main;
+export default HomePage;
