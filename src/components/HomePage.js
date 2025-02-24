@@ -8,8 +8,6 @@ import Chicago from './Chicago';
 function HomePage() {
   return (
     <div>
-      <h1>Welcome to Little Lemon</h1>
-
       {/* Hero section with a call to action */}
       <CallToAction />
 
