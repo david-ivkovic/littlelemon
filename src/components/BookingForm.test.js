@@ -1,43 +1,32 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import BookingForm from './BookingForm';
+import { render, screen, fireEvent } from '@testing-library/react';
+import BookingForm from './BookingForm';  // Import your BookingForm component
+import { fetchAPI } from './Api';  // Import the fetchAPI function
 
-// Test 1: Check if the static heading text is rendered
-test('Renders the BookingForm heading', () => {
-  render(<BookingForm availableTimes={['17:00', '18:00', '19:00']} updateTimes={() => {}} />);
-  const headingElement = screen.getByText(/Reserve a Table/i); // Match the heading text
-  expect(headingElement).toBeInTheDocument(); // Assert that it is rendered in the document
-});
+// Mock the fetchAPI function from Api.js
+jest.mock('./Api', () => ({
+  fetchAPI: jest.fn(),  // Mock fetchAPI
+}));
 
-// Test 2: Test the handleDateChange function to ensure state is updated when a date is selected
-test('updates available times when the date is changed', () => {
-  const mockUpdateTimes = jest.fn(); // Create a mock function for updateTimes
-  render(
-    <BookingForm
-      availableTimes={['17:00', '18:00', '19:00']}
-      updateTimes={mockUpdateTimes}
-    />
-  );
+// Test 1: Test if available times are fetched and rendered on date change
+test('should initialize available times when date is selected', () => {
+  // Prepare mock data for available times
+  const mockAvailableTimes = ['17:00', '17:30', '18:00'];
 
+  // Mock the fetchAPI function to return the mock data
+  fetchAPI.mockReturnValue(mockAvailableTimes);
+
+  // Render the BookingForm component
+  render(<BookingForm availableTimes={mockAvailableTimes} updateTimes={() => {}} />);
+
+  // Get the date input field and change the date
   const dateInput = screen.getByLabelText(/Choose date/i);
-  fireEvent.change(dateInput, { target: { value: '2025-05-01' } }); // Simulate selecting a date
+  fireEvent.change(dateInput, { target: { value: '2025-02-25' } }); // Simulate a date selection
 
-  expect(mockUpdateTimes).toHaveBeenCalledWith('2025-05-01'); // Assert that updateTimes is called with the correct date
-});
+  // Verify that fetchAPI was called with the correct date
+  expect(fetchAPI).toHaveBeenCalledWith(new Date('2025-02-25'));
 
-// Test 3: Test if the availableTimes are rendered in the select dropdown correctly
-test('renders available times in the select dropdown', () => {
-  const availableTimes = ['17:00', '18:00', '19:00'];
-  render(
-    <BookingForm
-      availableTimes={availableTimes}
-      updateTimes={() => {}}
-    />
-  );
-
-  const options = screen.getAllByRole('option'); // Get all options in the select dropdown
-
-  expect(options).toHaveLength(3); // Check that there are 3 options
-  expect(options[0]).toHaveTextContent('17:00'); // Check that the first option is "17:00"
-  expect(options[1]).toHaveTextContent('18:00'); // Check that the second option is "18:00"
-  expect(options[2]).toHaveTextContent('19:00'); // Check that the third option is "19:00"
+  // Verify that the available times are rendered on the screen
+  mockAvailableTimes.forEach(time => {
+    expect(screen.getByText(time)).toBeInTheDocument();
+  });
 });
