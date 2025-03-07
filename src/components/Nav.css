@@ -1,25 +1,7 @@
-nav {
-  background-color: #333;
-  padding: 10px;
+.lemon-primary-d {
+  color: #495e57;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
-}
-
-nav li {
-  margin: 0;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-nav a:hover {
-  text-decoration: underline;
+.lemon-primary-l {
+  color: #F4CE14;
 }
