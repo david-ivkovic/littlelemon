@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-md navbar-light bg-light pd mb-3">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
-          <img className="logo-height img-fluid" src={Logo} alt="Little Lemon Logo" />
+          <img className="logo-height img-fluid logo-img" src={Logo} alt="Little Lemon Logo" />
         </NavLink>
         <button
           className="navbar-toggler"

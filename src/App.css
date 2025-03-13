@@ -1,4 +1,6 @@
 /* src/App.css */
+
+/* General Styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -18,6 +20,7 @@ p {
   color: #666;
 }
 
+/* Navbar Styling */
 nav {
   background-color: #ff6600;
   padding: 1rem;
@@ -47,6 +50,7 @@ img {
   object-fit: cover;
 }
 
+/* Call-to-Action Styling */
 .call-to-action {
   font-size: 2rem;
   background-color: #f4f4f4;
@@ -62,6 +66,7 @@ button {
   cursor: pointer;
 }
 
+/* Hero Section (Call-to-Action) */
 .call-to-action {
   text-align: center;
   background-color: #ff6600;
@@ -80,4 +85,77 @@ button {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  /* Navbar */
+  nav {
+    padding: 1rem;
+  }
+
+  ul {
+    display: block; /* Stack the navbar items vertically */
+    text-align: center;
+  }
+
+  li {
+    margin: 1rem 0; /* Space out the items vertically */
+  }
+
+  .call-to-action {
+    font-size: 1.5rem; /* Reduce the font size for mobile screens */
+    padding: 30px;
+  }
+
+  .call-to-action h1 {
+    font-size: 2rem;
+  }
+
+  .call-to-action button {
+    padding: 8px 15px;
+  }
+
+  /* Adjust Button for Small Screens */
+  button {
+    padding: 8px 15px;
+    font-size: 1rem;
+  }
+
+  /* Images */
+  img {
+    border-radius: 8px;
+  }
+
+  logo-img {
+    height: 30px;
+  }
+
+  /* Adjust Text Sizes */
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustment for very small screens */
+  .call-to-action {
+    padding: 20px;
+  }
+
+  .call-to-action h1 {
+    font-size: 1.5rem;
+  }
+
+  .call-to-action button {
+    padding: 8px 12px;
+  }
+
+  button {
+    font-size: 1rem;
+  }
 }

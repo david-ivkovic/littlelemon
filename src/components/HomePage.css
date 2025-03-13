@@ -1,0 +1,18 @@
+.hero {
+    background: var(--primary-green);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    font-family: var(--font-heading);
+    color: var(--primary-yellow);
+  }
+  
+  .hero p {
+    font-size: 20px;
+    font-family: var(--font-body);
+  }
+  
