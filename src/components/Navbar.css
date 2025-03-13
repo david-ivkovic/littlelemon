@@ -1,6 +1,6 @@
 /* Navbar Styling */
 .navbar {
-  padding: 15px 0;
+  padding: 0px !important;
   background-color: #495e57; /* Green color */
 }
 

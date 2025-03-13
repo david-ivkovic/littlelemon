@@ -6,6 +6,7 @@ import BookingPage from './components/BookingPage'; // Booking page
 import './App.css'; // Import App.css for styling
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import bootstrap css
 import Navbar from './components/Navbar'; // Import Navbar component
+import Footer from './components/Footer'; // Import Footer component
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Main />} /> {/* HomePage component */}
         <Route path="/booking" element={<BookingPage />} /> {/* BookingPage component */}
       </Routes>
+      <Footer /> {/* Footer */}
     </>
   );
 }
