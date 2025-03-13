@@ -1,19 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css'; // Ensure this import is present if you're styling Nav specifically
-import "bootstrap/dist/css/bootstrap.min.css";
+import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-green shadow-sm">
+    <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
-        {/* Logo on the Left */}
-        <Link className="navbar-brand fw-bold text-success" to="/">
-          <img src="/assets/Logo.png" alt="Little Lemon Logo" /> {/* Make sure logo path is correct */}
-          Little Lemon
-        </Link>
-
-        {/* Mobile Toggler */}
+        <a className="navbar-brand" href="/">Little Lemon</a>
         <button
           className="navbar-toggler"
           type="button"
@@ -25,21 +18,19 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
-        {/* Centered Navigation Menu */}
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link active" to="/">Home</Link>
+              <NavLink exact className="nav-link" to="/" activeClassName="active">Home</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/menu">Menu</Link>
+              <NavLink className="nav-link" to="/menu" activeClassName="active">Menu</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
+              <NavLink className="nav-link" to="/about" activeClassName="active">About</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/booking">Booking</Link>
+              <NavLink className="nav-link" to="/booking" activeClassName="active">Booking</NavLink>
             </li>
           </ul>
         </div>
