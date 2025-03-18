@@ -1,7 +1,7 @@
 /* Navbar Styling */
 .navbar {
+  background-color: #222529; /* Green color */
   padding: 0px !important;
-  background-color: #495e57; /* Green color */
 }
 
 .navbar-brand {
@@ -9,22 +9,37 @@
   font-family: 'Markazi Text', serif;
   color: #F4CE14; /* Yellow color */
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-brand:hover {
   color: #fff;
 }
 
-.navbar-nav .nav-link {
+.navbar-nav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem; /* Adjust the gap between items */
+  flex-grow: 1;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.nav-link {
   font-size: 1.2rem;
   padding: 10px 15px;
   color: white; /* Button text color */
   border-radius: 5px; /* Rounded button */
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
   background-color: #F4CE14; /* Yellow background */
   color: black; /* Black text */
 }
@@ -38,9 +53,10 @@
 /* Mobile Navbar Styling */
 @media (max-width: 768px) {
   .navbar-nav {
+    flex-direction: column;
     text-align: center;
   }
-  
+
   .nav-item {
     margin: 10px 0;
   }

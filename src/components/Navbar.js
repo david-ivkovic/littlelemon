@@ -6,7 +6,9 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
-        <a className="navbar-brand" href="/">Little Lemon</a>
+        <a className="navbar-brand" href="/">
+          <img src={require("../Assets/Logo.png")} alt="Little Lemon Logo" className="logo-img" />
+        </a>
         <button
           className="navbar-toggler"
           type="button"

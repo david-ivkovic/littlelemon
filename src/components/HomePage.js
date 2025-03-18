@@ -7,10 +7,10 @@ import Chicago from './Chicago';
 
 function HomePage() {
   return (
-    <div>
+    <div className="main-content">
       {/* Hero section with a call to action */}
       <CallToAction />
-
+    
       {/* Specials section showcasing special dishes */}
       <Specials />
 

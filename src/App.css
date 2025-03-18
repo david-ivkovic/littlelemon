@@ -1,14 +1,19 @@
 /* src/App.css */
 
 /* General Styling */
+html, body {
+  height: 100%;  /* Ensures the body takes full height of the viewport */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;  /* Stack elements vertically */
+}
+
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #f4f4f4;
-  box-sizing: border-box;
+  flex-grow: 1; /* Ensures body fills the available space */
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 h1 {
@@ -21,12 +26,6 @@ p {
   font-size: 1rem;
   line-height: 1.6;
   color: #666;
-}
-
-/* Navbar Styling */
-nav {
-  background-color: #ff6600;
-  padding: 1rem;
 }
 
 ul {
@@ -71,7 +70,7 @@ button {
 
 /* Hero Section (Call-to-Action) */
 .call-to-action {
-  text-align: center;
+  text-align: left;
   background-color: #ff6600;
   padding: 50px;
   border-radius: 8px;
@@ -80,11 +79,12 @@ button {
 .call-to-action h1 {
   font-size: 2.5rem;
   color: white;
+  font-weight: bold;
 }
 
 .call-to-action button {
-  background-color: white;
-  color: #ff6600;
+  background-color: #eecf33;
+  color: #000;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -98,19 +98,22 @@ button {
 
 /* Main content area */
 .main-content {
-  flex: 1;
+  flex-grow: 1;
+  padding: 1rem 4rem;
 }
 
 /* Footer Styling */
 footer {
-  background-color: #495e57;
-  color: white;
   text-align: center;
-  padding: 1rem;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;}
+  padding: 20px;
+  margin-top: 50vh;
+  width: 100%;
+  position: absolute;
+}
+
+footer p {
+  color: #fff;
+}
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
@@ -169,12 +172,24 @@ footer {
     padding-left: 15px;
     padding-right: 15px;
   }
+
+  .footer {
+    text-align: left !important;
+  }
+
 }
 
 @media (max-width: 480px) {
   /* Further adjustment for very small screens */
+
+  /* Main content area */
+  .main-content {
+    flex-grow: 1;
+    padding: 0.5rem 1rem;
+  }
+
   .call-to-action {
-    padding: 20px;
+    padding: 10px;
   }
 
   .call-to-action h1 {
@@ -187,5 +202,9 @@ footer {
 
   button {
     font-size: 1rem;
+  }
+
+  .footer {
+    text-align: left !important;
   }
 }
