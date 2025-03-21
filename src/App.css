@@ -71,13 +71,19 @@ button {
 /* Hero Section (Call-to-Action) */
 .call-to-action {
   text-align: left;
-  background-color: #ff6600;
+  background-color: #4a5f57;
   padding: 50px;
   border-radius: 8px;
 }
 
 .call-to-action h1 {
   font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.call-to-action p {
+  font-size: 1rem;
   color: white;
   font-weight: bold;
 }

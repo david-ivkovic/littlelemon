@@ -61,3 +61,16 @@
     margin: 10px 0;
   }
 }
+
+/* Navbar.css */
+
+.navbar-toggler {
+  background-color: yellow;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

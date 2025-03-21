@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const Navbar = () => {
   return (
@@ -29,7 +30,7 @@ const Navbar = () => {
               <NavLink className="nav-link" to="/menu" activeClassName="active">Menu</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/about" activeClassName="active">About</NavLink>
+              <a className="nav-link" href="#about">About</a>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/booking" activeClassName="active">Booking</NavLink>

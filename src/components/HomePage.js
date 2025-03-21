@@ -18,7 +18,9 @@ function HomePage() {
       <CustomersSay />
 
       {/* About Chicago restaurant */}
-      <Chicago />
+      <div id="about">
+        <Chicago />
+      </div>
     </div>
   );
 }
