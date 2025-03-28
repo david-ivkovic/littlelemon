@@ -1,11 +1,21 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const Navbar = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#about') {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light">
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top"> {/* Added fixed-top class */}
       <div className="container">
         <a className="navbar-brand" href="/">
           <img src={require("../Assets/Logo.png")} alt="Little Lemon Logo" className="logo-img" />
@@ -30,7 +40,7 @@ const Navbar = () => {
               <NavLink className="nav-link" to="/menu" activeClassName="active">Menu</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#about">About</a>
+              <a className="nav-link" href="/#about">About</a>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/booking" activeClassName="active">Booking</NavLink>

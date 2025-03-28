@@ -98,7 +98,7 @@ function BookingForm() {
         </select>
 
         {/* Submit Button */}
-        <button type="submit" aria-label="On Click">
+        <button type="submit" aria-label="On Click" disabled={!formData.time}>
           Reserve
         </button>
       </fieldset>

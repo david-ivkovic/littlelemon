@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import restaurantImage from '../Assets/restaurant.jpg'; // Import the image
 
 function CallToAction() {
   return (
@@ -12,7 +13,7 @@ function CallToAction() {
         </Link>
       </div>
       <div className="cta-image">
-        <img src="restaurant.jpg" alt="Delicious dishes" />
+        <img src={restaurantImage} alt="Delicious dishes" />
       </div>
     </section>
   );

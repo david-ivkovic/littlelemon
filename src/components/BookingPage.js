@@ -16,6 +16,10 @@ function BookingPage() {
   // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (formData.time < 17) {
+      alert('Please select a time for your reservation.');
+      return;
+    }
     console.log('Booking data:', formData);
   };
 

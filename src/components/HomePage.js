@@ -4,6 +4,7 @@ import CallToAction from './CallToAction';
 import Specials from './Specials';
 import CustomersSay from './CustomersSay';
 import Chicago from './Chicago';
+import './HomePage.css';
 
 function HomePage() {
   return (
@@ -18,9 +19,9 @@ function HomePage() {
       <CustomersSay />
 
       {/* About Chicago restaurant */}
-      <div id="about">
+      <section id="about">
         <Chicago />
-      </div>
+      </section>
     </div>
   );
 }
