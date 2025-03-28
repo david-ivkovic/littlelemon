@@ -3,6 +3,7 @@
 /* General Styling */
 html, body {
   height: 100%;  /* Ensures the body takes full height of the viewport */
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   display: flex;
@@ -58,6 +59,10 @@ button {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.main-content > div > section {
+  margin-bottom: 20px;
 }
 
 /* Hero Section (Call-to-Action) */
@@ -123,14 +128,14 @@ button {
 /* Main content area */
 .main-content {
   flex-grow: 1;
-  padding: 1rem 4rem;
+  padding: 0.5rem 4rem;
 }
 
 /* Footer Styling */
 footer {
   text-align: center;
   padding: 20px;
-  margin-top: 50vh;
+  margin-top: auto; /* Footer sticks to the bottom */
   width: 100%;
   position: absolute;
 }

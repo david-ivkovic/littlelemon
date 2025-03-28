@@ -8,12 +8,12 @@ function Footer() {
         <div className="row">
           {/* Column 1 - Working Hours */}
           <div className="col-md-3 col-12 mb-4">
-            <h5>Working Hours</h5>
-            <div className="row">
-              <div className="col-12">Mon-Thu: 11:00 AM - 9:00 PM</div>
-              <div className="col-12">Fri: 11:00 AM - 1:00 AM</div>
-              <div className="col-12">Sat-Sun: 1:00 PM - 9:00 PM</div>
-            </div>
+                <h5>Working Hours</h5>
+                <div className="row">
+                  <div className="col-12"><strong><u>Mon-Thu:</u></strong> <i>11:00 AM - 9:00 PM</i></div>
+                  <div className="col-12"><strong><u>Fri:</u></strong> <i>11:00 AM - 1:00 AM</i></div>
+                  <div className="col-12"><strong><u>Sat-Sun:</u></strong> <i>1:00 PM - 9:00 PM</i></div>
+                </div>
           </div>
 
           {/* Column 2 - Business Info */}
@@ -22,8 +22,8 @@ function Footer() {
             <div className="row">
               <div className="col-12">Little Lemon Restaurant</div>
               <div className="col-12">123 Lemon St, Chicago, IL</div>
-              <div className="col-12">Phone: (123) 456-7890</div>
-              <div className="col-12">Email: info@littlelemon.com</div>
+              <div className="col-12"><a href='tel:123' className="text-white text-decoration-none">Phone: (123) 456-7890</a></div>
+              <div className="col-12">E-mail: info@littlelemon.project</div>
             </div>
           </div>
 
