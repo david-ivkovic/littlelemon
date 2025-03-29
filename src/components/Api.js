@@ -1,6 +1,4 @@
-// api.js
 
-// Function to simulate fetching available times for a given date
 export const fetchAPI = (date) => {
     let result = [];
     const seededRandom = (seed) => {

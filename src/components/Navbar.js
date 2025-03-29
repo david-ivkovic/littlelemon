@@ -15,7 +15,7 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top"> {/* Added fixed-top class */}
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top"> 
       <div className="container">
         <a className="navbar-brand" href="/">
           <img src={require("../Assets/Logo.png")} alt="Little Lemon Logo" className="logo-img" />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import BookingForm from './BookingForm';
+import './BookingPage.css'; // Import CSS for styling
 
 function BookingPage() {
   // State for form fields
@@ -33,7 +34,7 @@ function BookingPage() {
   };
 
   return (
-    <div>
+    <div className='booking-page'>
       <h1>Make a Reservation</h1>
       <BookingForm
         formData={formData}

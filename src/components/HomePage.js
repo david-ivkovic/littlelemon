@@ -1,4 +1,3 @@
-// src/components/HomePage.js
 import React from 'react';
 import CallToAction from './CallToAction';
 import Specials from './Specials';

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchAPI, submitAPI } from './Api'; // Import functions from Api.js
+import './BookingForm.css'; 
 
 function BookingForm() {
   // Get today's date in YYYY-MM-DD format
@@ -20,17 +21,15 @@ function BookingForm() {
     time: '',
   });
 
-  // Fetch available times for the selected date
   useEffect(() => {
     const fetchTimes = async () => {
-      const times = await fetchAPI(new Date(selectedDate)); // Call fetchAPI from Api.js
+      const times = await fetchAPI(new Date(selectedDate)); 
       setAvailableTimes(times); // Update availableTimes state
     };
 
     fetchTimes();
   }, [selectedDate]); // Re-run the effect when selectedDate changes
 
-  // Handle date change
   const handleDateChange = (event) => {
     setSelectedDate(event.target.value); // Update selected date
     setFormData({
@@ -40,15 +39,13 @@ function BookingForm() {
     });
   };
 
-  // Handle time change
   const handleTimeChange = (event) => {
     setFormData({
       ...formData,
-      time: event.target.value, // Update formData with the selected time
+      time: event.target.value,
     });
   };
 
-  // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
     const isSuccess = submitAPI(formData); // Call submitAPI from Api.js with the form data
@@ -60,32 +57,33 @@ function BookingForm() {
   };
 
   return (
-    <form style={{ display: 'grid', gap: '20px' }} aria-labelledby="booking-form" onSubmit={handleSubmit}>
+    <form style={{ display: 'grid', gap: '20px'}} aria-labelledby="booking-form" onSubmit={handleSubmit}>
       <fieldset>
         <legend id="booking-form">Booking Form</legend>
 
         {/* Date field */}
-        <label htmlFor="res-date" id="res-date-label">Choose date</label>
+        <label htmlFor="res-date" id="res-date-label" style={{ paddingRight: '10px' }}>Choose date</label>
         <input
           type="date"
           id="res-date"
           name="date"
-          onChange={handleDateChange} // Trigger handleDateChange on date change
-          value={selectedDate} // Default to today's date
-          min={todayDate} // Disable past dates
+          onChange={handleDateChange} 
+          value={selectedDate} 
+          min={todayDate} 
           aria-required="true"
           aria-describedby="res-date-label"
         />
 
         {/* Time field */}
-        <label htmlFor="res-time" id="res-time-label">Choose time</label>
+        <br />
+        <label htmlFor="res-time" id="res-time-label" style={{ paddingRight: '10px' }}>Choose time: </label>
         <select
           id="res-time"
           name="time"
           aria-required="true"
           aria-describedby="res-time-label"
           onChange={handleTimeChange}
-          value={formData.time} // Bind the selected time to formData.time
+          value={formData.time}
         >
           <option value="" disabled>
             {availableTimes.length > 0 ? 'Select a time' : 'Unavailable'}
@@ -96,7 +94,7 @@ function BookingForm() {
             </option>
           ))}
         </select>
-
+        <br />
         {/* Submit Button */}
         <button type="submit" aria-label="On Click" disabled={!formData.time}>
           Reserve

@@ -2,8 +2,7 @@
 
 /* General Styling */
 html, body {
-  height: 100%;  /* Ensures the body takes full height of the viewport */
-  min-height: 100vh;
+  height: 100vh;  /* Ensures the body takes full height of the viewport */
   margin: 0;
   padding: 0;
   display: flex;
@@ -56,6 +55,7 @@ img {
 button {
   background-color: #ff6600;
   color: white;
+  width: auto;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -65,31 +65,31 @@ button {
   margin-bottom: 20px;
 }
 
-/* Hero Section (Call-to-Action) */
 .call-to-action {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: left;
   background-color: #4a5f57;
-  padding: 50px;
+  padding: 0px;
   border-radius: 8px;
+  border: #6b6b6b 0.5px solid;
+  flex-wrap: wrap; 
 }
 
-/* Styling for the left section (text) */
-.cta-text {
+.cta-text-group {
   flex: 1; /* Take up half the space */
-  padding-right: 20px; /* Space between text and image */
+  padding: 20px 30px; /* Space between text and image */
 }
 
 .cta-text h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: white;
   font-weight: bold;
 }
 
 .cta-text p {
-  font-size: rem;
+  font-size: 1.2rem;
   color: white;
   font-weight: bold;
 }
@@ -97,6 +97,7 @@ button {
 .cta-text button {
   background-color: #eecf33;
   color: #000;
+  font-weight: bold;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -106,36 +107,36 @@ button {
   background-color: #d6b301;
 }
 
-/* Styling for the right section (image) */
+
 .cta-image {
-  flex: 1; /* Take up half the space */
-  text-align: center; /* Center the image */
+  flex: 1; 
+  text-align: center; 
+  padding: 0px;
 }
 
 .cta-image img {
-  width: 100%; /* Make the image responsive */
-  height: auto;
-  max-width: 500px; /* Limit image size */
-  border-radius: 8px;
+  width: 100%; 
+  max-height: 50vh; 
+  max-width: 100%; 
+  object-fit: cover; 
+  border-radius: 0px 8px 8px 0px;
 }
 
-/* Utility class for padding */
 .padding-container {
   padding-left: 70px;
   padding-right: 70px;
 }
 
-/* Main content area */
 .main-content {
   flex-grow: 1;
   padding: 0.5rem 4rem;
 }
 
-/* Footer Styling */
+
 footer {
   text-align: center;
   padding: 20px;
-  margin-top: auto; /* Footer sticks to the bottom */
+  margin-top: auto; 
   width: 100%;
   position: absolute;
 }
@@ -144,62 +145,27 @@ footer p {
   color: #fff;
 }
 
-/* Mobile responsiveness */
 @media (max-width: 768px) {
-  /* Navbar */
-  nav {
-    padding: 1rem;
-  }
-
-  ul {
-    display: block; /* Stack the navbar items vertically */
-    text-align: center;
-  }
-
-  li {
-    margin: 1rem 0; /* Space out the items vertically */
-  }
-
   .call-to-action {
-    font-size: 1.5rem; /* Reduce the font size for mobile screens */
-    padding: 30px;
-    flex-direction: column; /* Stack text and image vertically on small screens */
-    text-align: center; /* Center the content */
+    flex-direction: column; 
+    text-align: center; 
+    padding: 30px; 
   }
 
-  .call-to-action h1 {
-    font-size: 2rem;
-  }
-
-  .call-to-action button {
-    padding: 8px 15px;
-  }
-
-  .cta-text {
-    padding: 20px;
+  .cta-text-group {
+    padding: 20px 0;
   }
 
   .cta-image img {
-    max-width: 100%; /* Make image fit well on smaller screens */
+    max-width: 100%;
     padding: 0px;
   }
 
-  /* Adjust Button for Small Screens */
   button {
     padding: 8px 15px;
     font-size: 1rem;
   }
 
-  /* Images */
-  img {
-    border-radius: 8px;
-  }
-
-  logo-img {
-    height: 30px;
-  }
-
-  /* Adjust Text Sizes */
   h1 {
     font-size: 2rem;
   }
@@ -208,28 +174,15 @@ footer p {
     font-size: 0.9rem;
   }
 
-  .padding-container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
   .footer {
     text-align: left !important;
   }
-
 }
 
 @media (max-width: 480px) {
-  /* Further adjustment for very small screens */
-
-  /* Main content area */
   .main-content {
     flex-grow: 1;
     padding: 0.5rem 1rem;
-  }
-
-  .call-to-action {
-    padding: 10px;
   }
 
   .call-to-action h1 {
